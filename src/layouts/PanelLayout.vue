@@ -56,7 +56,7 @@ const breadcrumbData = computed(() => {
   switch (route.name) {
     case 'mis-cursos':
       return {
-        section: 'Académico',
+        section: 'Tutor Académico',
         page: 'Mis Cursos'
       }
     case 'perfil':
@@ -66,7 +66,7 @@ const breadcrumbData = computed(() => {
       }
     case 'proyectos':
       return {
-        section: 'Académico',
+        section: 'Tutor Académico',
         page: 'Proyectos'
       }
     case 'gestion-salones':

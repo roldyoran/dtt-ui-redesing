@@ -22,13 +22,13 @@
     <Collapsible v-model:open="isExpanded">
       <CollapsibleContent>
         <CardContent class="pt-0">
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             <Button 
               v-for="action in actions" 
               :key="action.id"
               variant="outline" 
-              size="sm"
-              class="text-xs justify-start"
+              size="lg"
+              class="text-sm justify-start"
             >
               <component :is="action.icon" class="w-4 h-4 mr-2" />
               {{ action.label }}
@@ -79,7 +79,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const isExpanded = ref(false)
+const isExpanded = ref(true)
 
 const toggleExpanded = () => {
   isExpanded.value = !isExpanded.value
