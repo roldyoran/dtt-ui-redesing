@@ -151,7 +151,7 @@ button:active {
 /* Estilos de scrollbar usando variables del proyecto - mejor contraste en dark */
 :root {
   --scrollbar-track: var(--color-background, var(--background));
-  --scrollbar-thumb: var(--color-muted-foreground, var(--muted));
+  --scrollbar-thumb: var(--color-accent, var(--muted));
   --scrollbar-thumb-hover: var(--color-primary, var(--primary));
   --scrollbar-thumb-border-track: var(--color-background, var(--background));
 }

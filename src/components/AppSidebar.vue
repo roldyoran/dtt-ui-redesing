@@ -44,9 +44,9 @@ const themeToggleRef = ref<InstanceType<typeof ThemeToggle>>()
 // Data for DTT Platform
 const data = {
   user: {
-    name: "Edgar Rolando Alvarez Rodriguez",
-    email: "edgar@dtt.com",
-    avatar: "/avatars/edgar.jpg",
+    name: "User DTT",
+    email: "user@dtt.com",
+    avatar: "/avatars/user.jpg",
   },
   teams: [
     {
