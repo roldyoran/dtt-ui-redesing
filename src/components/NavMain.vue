@@ -39,10 +39,10 @@ defineProps<{
         <!-- Elemento simple sin subelementos -->
         <SidebarMenuItem v-if="!item.items || item.items.length === 0">
           <SidebarMenuButton :tooltip="item.title" as-child>
-            <a :href="item.url">
+            <RouterLink :to="item.url">
               <component :is="item.icon" v-if="item.icon" />
               <span>{{ item.title }}</span>
-            </a>
+            </RouterLink>
           </SidebarMenuButton>
         </SidebarMenuItem>
 
@@ -65,9 +65,9 @@ defineProps<{
               <SidebarMenuSub>
                 <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                   <SidebarMenuSubButton as-child>
-                    <a :href="subItem.url">
+                    <RouterLink :to="subItem.url">
                       <span>{{ subItem.title }}</span>
-                    </a>
+                    </RouterLink>
                   </SidebarMenuSubButton>
                 </SidebarMenuSubItem>
               </SidebarMenuSub>

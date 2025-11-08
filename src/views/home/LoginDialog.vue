@@ -38,7 +38,12 @@ const close = () => emit('update:open', false)
         </div>
 
         <div class="space-y-3">
-          <Button class="w-full">Iniciar Sesión</Button>
+          <Button as-child class="w-full">
+            <RouterLink to="/panel">
+
+              Iniciar Sesión
+            </RouterLink>
+          </Button>
           <div class="text-center space-y-2">
             <a href="#" class="text-sm transition-all  hover:text-primary/80 block">¿Olvidaste tu contraseña?</a>
             <a href="#" class="text-sm transition-all text-muted-foreground hover:text-primary block">¿Olvidaste tu nombre de usuario?</a>

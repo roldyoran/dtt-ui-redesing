@@ -2,6 +2,9 @@
 import type { SidebarProps } from '@/components/ui/sidebar'
 import { ref } from 'vue'
 
+// Props estándar del sidebar
+interface AppSidebarProps extends SidebarProps {}
+
 import {
   AudioWaveform,
   BookOpen,
@@ -31,7 +34,7 @@ import {
   SidebarRail,
 } from '@/components/ui/sidebar'
 
-const props = withDefaults(defineProps<SidebarProps>(), {
+const props = withDefaults(defineProps<AppSidebarProps>(), {
   collapsible: "icon",
 })
 
@@ -65,125 +68,125 @@ const data = {
   navMain: [
     {
       title: "Inicio",
-      url: "#",
+      url: "/panel",
       icon: SquareTerminal,
       isActive: true,
     },
     {
       title: "Proyectos",
-      url: "#",
+      url: "/proyectos",
       icon: Bot,
       items: [
         {
           title: "Practica Final",
-          url: "#",
+          url: "/practica-final",
         },
         {
           title: "Escuela de Vacaciones",
-          url: "#",
+          url: "/escuela-vacaciones",
         },
         {
           title: "Sanciones por copia y plagio",
-          url: "#",
+          url: "/sanciones",
         },
         {
           title: "Recepción de Papelería",
-          url: "#",
+          url: "/papeleria",
         },
         {
           title: "DSI",
-          url: "#",
+          url: "/dsi",
         },
       ],
     },
     {
       title: "Gestion de Salones",
-      url: "#",
+      url: "/gestion-salones",
       icon: BookOpen,
       items: [
         {
           title: "Reservar Salon",
-          url: "#",
+          url: "/reservar-salon",
         },
         {
           title: "Mis gestiones",
-          url: "#",
+          url: "/mis-gestiones",
         },
       ],
     },
     {
       title: "Mis cursos",
-      url: "#",
+      url: "/mis-cursos",
       icon: Settings2,
       items: [
         {
           title: "Mis cursos",
-          url: "#",
+          url: "/mis-cursos",
         },
         {
           title: "Incidentes",
-          url: "#",
+          url: "/incidentes",
         },
       ],
     },
     {
       title: "Bolsa de Trabajo",
-      url: "#",
+      url: "/bolsa-trabajo",
       icon: Frame,
       items: [
         {
           title: "Mi CV",
-          url: "#",
+          url: "/mi-cv",
         },
         {
           title: "Formulario CV",
-          url: "#",
+          url: "/formulario-cv",
         },
         {
           title: "Ofertas Laborales",
-          url: "#",
+          url: "/ofertas-laborales",
         },
         {
           title: "Mis Aplicaciones",
-          url: "#",
+          url: "/mis-aplicaciones",
         },
       ],
     },
     {
       title: "Perfil",
-      url: "#",
+      url: "/perfil",
       icon: Settings2,
       items: [
         {
           title: "Mis Datos",
-          url: "#",
+          url: "/mis-datos",
         },
         {
           title: "Contraseña",
-          url: "#",
+          url: "/contrasena",
         },
         {
           title: "Sanciones y faltas",
-          url: "#",
+          url: "/sanciones-faltas",
         },
       ],
     },
     {
       title: "Ayuda",
-      url: "#",
+      url: "/ayuda",
       icon: BookOpen,
       items: [
         {
           title: "Archivos",
-          url: "#",
+          url: "/archivos",
         },
         {
           title: "Enlaces",
-          url: "#",
+          url: "/enlaces",
         },
         {
           title: "Preguntas frecuentes",
-          url: "#",
+          url: "/preguntas-frecuentes",
         },
       ],
     },
@@ -206,10 +209,14 @@ const data = {
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem class="px-2">
+          <RouterLink to="/">
           <SidebarMenuButton>
             <LogOut />
-            <span>Salir</span>
+            <span>
+              Salir
+            </span>
           </SidebarMenuButton>
+        </RouterLink>
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarContent>

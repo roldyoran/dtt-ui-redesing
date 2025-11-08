@@ -21,11 +21,11 @@ const openLogin = () => emit('open-login')
 
 <template>
   <nav class="bg-card shadow-sm border-b-2 border-orange-500">
-    <div class="max-w-7xl mx-auto px-4 py-2.5  sm:px-6 lg:px-14">
-      <div class="flex justify-between h-16">
+    <div class="max-w-7xl mx-auto px-4  sm:px-6 lg:px-20">
+      <div class="flex justify-between py-3">
         <div class="flex items-center">
-          <div class="shrink-0 flex items-center space-x-3">
-            <img src="/logo-ecys-fiusac-min.png" alt="Logo ECYS FIUSAC" class="h-16 w-auto" />
+          <div class="shrink-0 flex items-center space-x-2">
+            <img src="/logo-ecys-fiusac-min.png" alt="Logo ECYS FIUSAC" class="h-14 w-auto" />
           </div>
         </div>
 
