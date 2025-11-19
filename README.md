@@ -2,6 +2,8 @@
 
 Proyecto front-end que contiene la interfaz de usuario rediseñada para la plataforma DTT (Facultad/ECYS). Está construido con Vue 3, Vite y TailwindCSS, y utiliza componentes reutilizables inspirados en shadcn/ui adaptados al ecosistema Vue.
 
+🌐 **Demo en vivo**: [https://roldyoran.github.io/dtt-ui-redesing/](https://roldyoran.github.io/dtt-ui-redesing/)
+
 ## Contenido de esta documentación
 - Descripción rápida
 - Requisitos
