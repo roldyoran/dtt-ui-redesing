@@ -44,7 +44,7 @@ watchEffect(() => {
 }
 
 .github-bounce {
-  animation: gentle-bounce 2s ease-in-out infinite;
+  animation: gentle-bounce 3s ease-in-out infinite;
 }
 
 .github-bounce:hover {
