@@ -27,6 +27,9 @@
         <RouterView />
       </div>
     </SidebarInset>
+    
+    <!-- Toaster para notificaciones -->
+    <Toaster />
   </SidebarProvider>
 </template>
 
@@ -48,6 +51,7 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { Separator } from '@/components/ui/separator'
+import { Toaster } from '@/components/ui/sonner'
 
 const route = useRoute()
 

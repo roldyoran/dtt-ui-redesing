@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import AboutView from '@/views/AboutView.vue'
+import AutoridadesView from '@/views/AutoridadesView.vue'
+import ProfileStudentView from '@/views/ProfileStudentView.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
 import PanelLayout from '@/layouts/PanelLayout.vue'
 import DashboardView from '@/views/DashboardView.vue'
@@ -13,6 +16,21 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView,
+    },
+    {
+      path: '/autorities',
+      name: 'autoridades',
+      component: AutoridadesView,
+    },
+    {
+      path: '/profile_student',
+      name: 'profile-student',
+      component: ProfileStudentView,
     },
     // Rutas que usan el panel layout
     {
