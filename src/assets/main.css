@@ -195,8 +195,3 @@ button:active {
 *::-webkit-scrollbar-corner {
   background: var(--scrollbar-track);
 }
-
-/* Soporte para foco (teclado) en el thumb */
-*::-webkit-scrollbar-thumb:focus {
-  box-shadow: 0 0 0 3px var(--color-ring, var(--ring));
-}

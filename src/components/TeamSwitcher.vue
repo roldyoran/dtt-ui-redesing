@@ -29,7 +29,7 @@ const props = defineProps<{
 }>()
 
 const { isMobile } = useSidebar()
-const activeTeam = ref(props.teams[0])
+const activeTeam = ref(props.teams[0] || { name: '', logo: {} as Component, plan: '' })
 </script>
 
 <template>
@@ -44,13 +44,13 @@ const activeTeam = ref(props.teams[0])
             <div
               class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
             >
-              <component :is="activeTeam.logo" class="size-4" />
+              <component :is="activeTeam?.logo" class="size-4" />
             </div>
             <div class="grid flex-1 text-left text-sm leading-tight">
               <span class="truncate font-medium">
-                {{ activeTeam.name }}
+                {{ activeTeam?.name }}
               </span>
-              <span class="truncate text-xs">{{ activeTeam.plan }}</span>
+              <span class="truncate text-xs">{{ activeTeam?.plan }}</span>
             </div>
             <ChevronsUpDown class="ml-auto" />
           </SidebarMenuButton>

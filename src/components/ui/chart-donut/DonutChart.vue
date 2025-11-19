@@ -107,7 +107,9 @@ const totalValue = computed(() =>
               } else {
                 activeSegmentKey = d?.data?.[index]
                 elements.forEach((el) => (el.style.opacity = `${filterOpacity}`))
-                elements[i].style.opacity = '1'
+                if (elements[i]) {
+                  elements[i].style.opacity = '1'
+                }
               }
             },
           },
