@@ -182,6 +182,7 @@ import {
   EyeIcon,
   ClockIcon,
 } from 'lucide-vue-next'
+import { getAssetPath } from '@/lib/assets'
 
 // Sample news data
 const sampleNews = ref([
@@ -203,7 +204,7 @@ const sampleNews = ref([
 ])
 
 // Video data
-const videoThumbnail = ref('/fiusac03.jpg')
+const videoThumbnail = ref(getAssetPath('/fiusac03.jpg'))
 const videoTitle = ref('Conoce la Escuela de Ciencias y Sistemas')
 const videoDescription = ref(
   'Un recorrido por nuestras instalaciones y programas académicos que forman a los ingenieros del futuro.',

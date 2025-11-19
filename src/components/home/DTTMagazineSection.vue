@@ -201,6 +201,7 @@ import { ChevronLeftIcon, ChevronRightIcon, StarIcon, BookOpenIcon, BookIcon, Pe
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { getAssetPath } from '@/lib/assets'
 
 // Magazine data
 const magazines = ref([
@@ -208,28 +209,28 @@ const magazines = ref([
     id: 1,
     title: 'Ciencias, Sistemas y Tecnología',
     issue: 'Edición No. 7',
-    cover: '/magazine.image_file.a451332fa60d6bdf.NS5wbmc=.png',
+    cover: getAssetPath('/magazine.image_file.a451332fa60d6bdf.NS5wbmc=.png'),
     year: '2024',
   },
   {
     id: 2,
     title: 'Ciencias, Sistemas y Tecnología',
     issue: 'Edición No. 6',
-    cover: '/magazine.image_file.a91afc397bcba614.NC5wbmc=.png',
+    cover: getAssetPath('/magazine.image_file.a91afc397bcba614.NC5wbmc=.png'),
     year: '2023',
   },
   {
     id: 3,
     title: 'Ciencias, Sistemas y Tecnología',
     issue: 'Edición No. 5',
-    cover: '/magazine.image_file.9efd7f1c43d4bc39.My5wbmc=.png',
+    cover: getAssetPath('/magazine.image_file.9efd7f1c43d4bc39.My5wbmc=.png'),
     year: '2023',
   },
   {
     id: 4,
     title: 'Ciencias, Sistemas y Tecnología',
     issue: 'Edición No. 4',
-    cover: '/magazine.image_file.94fa5f01453571b7.Mi5wbmc=.png',
+    cover: getAssetPath('/magazine.image_file.94fa5f01453571b7.Mi5wbmc=.png'),
     year: '2022',
   },
 ])
