@@ -1,9 +1,9 @@
 <template>
   <section class="py-16 bg-muted/50">
     <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start max-w-7xl mx-auto">
         <!-- Carousel Side -->
-        <div class="relative">
+        <div class="relative lg:col-span-2">
           <div class="text-center mb-8 lg:hidden">
             <h2 class="text-3xl font-bold text-foreground mb-4">Revista ECYS</h2>
             <div class="flex items-center justify-center space-x-2 text-muted-foreground">
@@ -15,63 +15,62 @@
 
           <Card class="overflow-hidden shadow-xl">
             <CardContent class="p-2">
-              <Carousel
-                class="w-full"
-                :opts="{
-                  align: 'start',
-                  loop: true,
-                }"
-                :autoplay="true"
-                :autoplayDelay="3000"
-              >
-                <CarouselContent>
-                  <CarouselItem
-                    v-for="(magazine, index) in magazines"
-                    :key="index"
-                    class="basis-full"
-                  >
-                    <div class="relative group cursor-pointer" @click="viewMagazine(magazine)">
-                      <div
-                        class="aspect-3/4 bg-linear-to-br from-primary/10 to-primary/5 rounded-lg overflow-hidden"
-                      >
+              <div class="w-full relative h-auto">
+                <div
+                  class="h-full flex transition-transform duration-700 ease-in-out"
+                  :style="{ transform: `translateX(-${currentSlide * 100}%)` }"
+                >
+                  <div v-for="(magazine, index) in magazines" :key="index" class="w-full h-full shrink-0 px-2">
+                    <div class="relative group cursor-pointer h-full w-full" @click="viewMagazine(magazine)">
+                      <div class="h-full w-full bg-linear-to-br from-primary/10 to-primary/5 rounded-lg overflow-hidden flex items-center justify-center">
                         <img
                           :src="magazine.cover"
                           :alt="magazine.title"
-                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          class="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
                         />
-                        <!-- Hover overlay -->
-                        <div
-                          class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center"
-                        >
-                          <div
-                            class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3"
-                          >
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                          <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3">
                             <BookOpenIcon class="h-8 w-8 text-primary" />
                           </div>
                         </div>
                       </div>
 
-                      <!-- Magazine Info -->
-                      <div
-                        class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-4 text-white"
-                      >
+                      <div class="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-4 text-white">
                         <h3 class="font-semibold text-sm">{{ magazine.title }}</h3>
                         <p class="text-xs text-white/80 mt-1">{{ magazine.issue }}</p>
                       </div>
                     </div>
-                  </CarouselItem>
-                </CarouselContent>
+                  </div>
+                </div>
 
-                <!-- Navigation -->
-                <div class="flex justify-center space-x-2 mt-6">
-                  <CarouselPrevious
-                    class="static translate-y-0 h-8 w-8 border-primary/20 hover:bg-primary hover:text-primary-foreground"
-                  />
-                  <CarouselNext
-                    class="static translate-y-0 h-8 w-8 border-primary/20 hover:bg-primary hover:text-primary-foreground"
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  class="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 p-0 border border-white/20 bg-white/10 hover:bg-white/20 text-white rounded-full"
+                  @click="previousSlide"
+                >
+                  <ChevronLeftIcon class="h-5 w-5" />
+                </Button>
+
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  class="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-10 w-10 p-0 border border-white/20 bg-white/10 hover:bg-white/20 text-white rounded-full"
+                  @click="nextSlide"
+                >
+                  <ChevronRightIcon class="h-5 w-5" />
+                </Button>
+
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                  <button
+                    v-for="(_, index) in magazines"
+                    :key="index"
+                    @click="goToSlide(index)"
+                    class="w-2 h-2 rounded-full transition-all duration-300"
+                    :class="currentSlide === index ? 'bg-white' : 'bg-white/40 hover:bg-white/60'"
                   />
                 </div>
-              </Carousel>
+              </div>
             </CardContent>
           </Card>
 
@@ -85,9 +84,9 @@
         </div>
 
         <!-- Content Side -->
-        <div class="space-y-8">
+        <div class="space-y-4 lg:col-span-3">
           <div class="hidden lg:block">
-            <div class="text-center lg:text-left mb-8">
+            <div class="text-center lg:text-left mb-4">
               <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Revista ECYS</h2>
               <div
                 class="flex items-center justify-center lg:justify-start space-x-2 text-muted-foreground"
@@ -99,7 +98,7 @@
             </div>
           </div>
 
-          <div class="space-y-6">
+          <div class="space-y-3">
             <div
               class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary"
             >
@@ -107,7 +106,7 @@
               Publicación Académica
             </div>
 
-            <div class="space-y-4 text-muted-foreground leading-relaxed">
+            <div class="space-y-3 text-muted-foreground leading-relaxed">
               <p>
                 La realización de la revista digital para la Escuela de Ciencias y Sistemas de la
                 Facultad de Ingeniería de la Universidad de San Carlos de Guatemala, inicia con el
@@ -163,7 +162,7 @@
             </div>
 
             <!-- Statistics -->
-            <div class="grid grid-cols-3 gap-4 py-6">
+            <div class="grid grid-cols-3 gap-4 py-4">
               <div class="text-center">
                 <div class="text-2xl font-bold text-primary">{{ magazineStats.editions }}+</div>
                 <div class="text-xs text-muted-foreground mt-1">Ediciones</div>
@@ -179,7 +178,7 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+            <div class="flex flex-col sm:flex-row gap-4 pt-2">
               <Button size="lg" @click="viewAllMagazines">
                 <BookOpenIcon class="mr-2 h-4 w-4" />
                 Ver Todas las Ediciones
@@ -198,17 +197,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel'
+import { ChevronLeftIcon, ChevronRightIcon, StarIcon, BookOpenIcon, BookIcon, PenToolIcon, CheckIcon } from 'lucide-vue-next'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { StarIcon, BookOpenIcon, BookIcon, PenToolIcon, CheckIcon } from 'lucide-vue-next'
 
 // Magazine data
 const magazines = ref([
@@ -247,6 +239,21 @@ const magazineStats = ref({
   articles: 150,
   downloads: 25,
 })
+
+// Carousel state for magazines (manual controls)
+const currentSlide = ref(0)
+
+const nextSlide = () => {
+  currentSlide.value = (currentSlide.value + 1) % magazines.value.length
+}
+
+const previousSlide = () => {
+  currentSlide.value = currentSlide.value === 0 ? magazines.value.length - 1 : currentSlide.value - 1
+}
+
+const goToSlide = (index: number) => {
+  currentSlide.value = index
+}
 
 const viewMagazine = (magazine: any) => {
   console.log('View magazine:', magazine)

@@ -118,13 +118,18 @@
 
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" class="group">
-              <BookOpenIcon class="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
-              Conoce Más
+            <Button size="lg" class="group" as-child>
+              <a href="https://www.youtube.com/@dttecys2175" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center">
+                <BookOpenIcon class="mr-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
+                Conoce Más
+              </a>
             </Button>
-            <Button variant="outline" size="lg">
-              <DownloadIcon class="mr-2 h-4 w-4" />
-              Descargar Pensum
+
+            <Button variant="outline" size="lg" as-child>
+              <a href="/PENSUM_ANTES_DEL_CLAR_2022.png" class="flex items-center justify-center" download>
+                <DownloadIcon class="mr-2 h-4 w-4" />
+                Descargar Pensum
+              </a>
             </Button>
           </div>
         </div>

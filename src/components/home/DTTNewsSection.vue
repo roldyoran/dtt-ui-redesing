@@ -134,6 +134,31 @@
         </Card>
       </div>
     </div>
+
+    <!-- Video Modal -->
+    <Dialog v-model:open="isVideoOpen">
+      <DialogContent class="max-w-[95vw] w-[95vw] p-0">
+        <DialogHeader class="p-6 pb-4">
+          <DialogTitle>Video Institucional - ECYS</DialogTitle>
+          <DialogDescription>
+            Conoce más sobre la Escuela de Ciencias y Sistemas
+          </DialogDescription>
+        </DialogHeader>
+        <div class="aspect-video w-full">
+          <iframe
+            v-if="isVideoOpen"
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/wSy_P0pm14I?autoplay=1"
+            title="Video Institucional ECYS"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            class="rounded-b-lg"
+          ></iframe>
+        </div>
+      </DialogContent>
+    </Dialog>
   </section>
 </template>
 
@@ -141,6 +166,13 @@
 import { ref } from 'vue'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 import {
   FacebookIcon,
   YoutubeIcon,
@@ -184,11 +216,12 @@ const openFacebook = () => {
 }
 
 const openYouTube = () => {
-  window.open('https://www.youtube.com/channel/YOUR_CHANNEL', '_blank')
+  window.open('https://www.youtube.com/@dttecys2175', '_blank')
 }
 
+const isVideoOpen = ref(false)
+
 const playVideo = () => {
-  // Here you would implement the video player logic
-  console.log('Play video')
+  isVideoOpen.value = true
 }
 </script>
