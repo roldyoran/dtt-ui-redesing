@@ -132,7 +132,7 @@ document.documentElement.classList.remove('dark')
 
 ## Despliegue
 
-El proyecto genera una build estática con Vite:
+El proyecto genera una build con Vite:
 
 ```powershell
 pnpm build
