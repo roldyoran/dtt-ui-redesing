@@ -17,11 +17,16 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  Sun,
+  Moon,
+  Monitor,
 } from "lucide-vue-next"
 import NavMain from '@/components/NavMain.vue'
 import NavUser from '@/components/NavUser.vue'
 import TeamSwitcher from '@/components/TeamSwitcher.vue'
 import ThemeToggle from '@/components/ThemeToggle.vue'
+import { useColorMode } from '@vueuse/core'
+import { computed } from 'vue'
 
 import {
   Sidebar,
@@ -41,6 +46,24 @@ const props = withDefaults(defineProps<AppSidebarProps>(), {
 // Referencia al componente ThemeToggle
 const themeToggleRef = ref<InstanceType<typeof ThemeToggle>>()
 
+// Theme management
+const mode = useColorMode()
+
+const currentThemeIcon = computed(() => {
+  switch (mode.value) {
+    case 'dark':
+      return Moon
+    case 'light':
+      return Sun
+    default:
+      return Monitor
+  }
+})
+
+const toggleTheme = () => {
+  mode.value = mode.value === 'light' ? 'dark' : 'light'
+}
+
 // Data for DTT Platform
 const data = {
   user: {
@@ -51,19 +74,19 @@ const data = {
   teams: [
     {
       name: "DTT Platform",
-      logo: GalleryVerticalEnd,
+      logo: BookOpen,
       plan: "Educational",
     },
-    {
-      name: "FIUSAC",
-      logo: AudioWaveform,
-      plan: "Educational",
-    },
-    {
-      name: "DTT Corp.",
-      logo: Command,
-      plan: "Professional",
-    },
+    // {
+    //   name: "FIUSAC",
+    //   logo: AudioWaveform,
+    //   plan: "Educational",
+    // },
+    // {
+    //   name: "DTT Corp.",
+    //   logo: Command,
+    //   plan: "Professional",
+    // },
   ],
   navMain: [
     {
@@ -201,22 +224,20 @@ const data = {
     </SidebarHeader>
     <SidebarContent>
       <NavMain :items="data.navMain" />
-      <SidebarMenu class="mt-auto">
-        <SidebarMenuItem class="px-2">
-          <SidebarMenuButton class="w-full justify-start" @click="themeToggleRef?.toggleTheme()">
-            <ThemeToggle ref="themeToggleRef" />
+      <SidebarMenu class="mt-auto px-2">
+        <SidebarMenuItem>
+          <SidebarMenuButton @click="toggleTheme">
+            <component :is="currentThemeIcon" />
             <span>Tema</span>
           </SidebarMenuButton>
         </SidebarMenuItem>
-        <SidebarMenuItem class="px-2">
+        <SidebarMenuItem>
           <RouterLink to="/">
-          <SidebarMenuButton>
-            <LogOut />
-            <span>
-              Salir
-            </span>
-          </SidebarMenuButton>
-        </RouterLink>
+            <SidebarMenuButton>
+              <LogOut />
+              <span>Salir</span>
+            </SidebarMenuButton>
+          </RouterLink>
         </SidebarMenuItem>
       </SidebarMenu>
     </SidebarContent>

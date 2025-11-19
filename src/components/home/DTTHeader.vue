@@ -167,95 +167,274 @@
         </div>
 
         <!-- Mobile menu button -->
-        <div class="lg:hidden">
+        <div class="lg:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Sheet v-model:open="isOpen">
             <SheetTrigger as-child>
-              <Button variant="ghost" size="sm">
-                <MenuIcon class="h-6 w-6" />
+              <Button variant="ghost" size="icon" class="h-10 w-10">
+                <MenuIcon class="h-5 w-5" />
                 <span class="sr-only">Abrir menú</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" class="w-80">
-              <SheetHeader>
-                <SheetTitle>Navegación</SheetTitle>
-              </SheetHeader>
-              <div class="mt-6 flow-root">
-                <div class="space-y-2">
-                  <Button 
-                    variant="ghost" 
-                    class="w-full justify-start"
-                    as-child
-                    @click="isOpen = false"
+            <SheetContent side="right" class="w-[85vw] sm:w-[400px] px-0">
+              <SheetHeader class="px-6 pb-4 border-b">
+                <div class="flex items-center gap-3">
+                  <img 
+                    src="/logo-ecys-fiusac-min.png" 
+                    alt="DTT ECYS" 
+                    class="h-12 w-auto"
                   >
-                    <router-link to="/">
-                      <HomeIcon class="mr-2 h-4 w-4" />
-                      Inicio
-                    </router-link>
-                  </Button>
-
-                  <!-- Mobile Nosotros -->
-                  <Collapsible v-model:open="mobileMenus.nosotros">
-                    <CollapsibleTrigger as-child>
-                      <Button variant="ghost" class="w-full justify-between">
-                        <span class="flex items-center">
-                          <UsersIcon class="mr-2 h-4 w-4" />
-                          Nosotros
-                        </span>
-                        <ChevronDownIcon class="h-4 w-4" />
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent class="pl-6 space-y-1">
-                      <Button variant="ghost" size="sm" class="w-full justify-start" as-child @click="isOpen = false">
-                        <router-link to="/about">Acerca de Nosotros</router-link>
-                      </Button>
-                      <Button variant="ghost" size="sm" class="w-full justify-start" as-child @click="isOpen = false">
-                        <router-link to="/autoridades">Autoridades</router-link>
-                      </Button>
-                      <Button variant="ghost" size="sm" class="w-full justify-start" as-child @click="isOpen = false">
-                        <router-link to="/profile_student">Perfil del Estudiante</router-link>
-                      </Button>
-                      <Button variant="ghost" size="sm" class="w-full justify-start" as-child @click="isOpen = false">
-                        <router-link to="/escuela">Escuela</router-link>
-                      </Button>
-                    </CollapsibleContent>
-                  </Collapsible>
-
-                  <Button 
-                    variant="ghost" 
-                    class="w-full justify-start"
-                    as-child
-                    @click="isOpen = false"
-                  >
-                    <router-link to="/revista">
-                      <BookOpenIcon class="mr-2 h-4 w-4" />
-                      Revista ECYS
-                    </router-link>
-                  </Button>
-
-                  <Button 
-                    variant="ghost" 
-                    class="w-full justify-start"
-                    as-child
-                    @click="isOpen = false"
-                  >
-                    <router-link to="/eventos">
-                      <CalendarIcon class="mr-2 h-4 w-4" />
-                      Eventos
-                    </router-link>
-                  </Button>
-
-                  <!-- Mobile Theme Toggle -->
-                  <div class="flex items-center justify-between py-2">
-                    <span class="text-sm font-medium">Tema</span>
-                    <ThemeToggle />
+                  <div class="flex flex-col items-start">
+                    <SheetTitle class="text-lg">Navegación</SheetTitle>
+                    <p class="text-xs text-muted-foreground">DTT ECYS FIUSAC</p>
                   </div>
+                </div>
+              </SheetHeader>
+              
+              <div class="flex flex-col h-[calc(100vh-8rem)]">
+                <div class="flex-1 overflow-y-auto py-4 px-4">
+                  <div class="space-y-1">
+                    <Button 
+                      variant="ghost" 
+                      class="w-full justify-start h-11 px-4 text-base font-medium"
+                      as-child
+                      @click="isOpen = false"
+                    >
+                      <router-link to="/" class="flex items-center">
+                        <HomeIcon class="mr-3 h-5 w-5" />
+                        Inicio
+                      </router-link>
+                    </Button>
 
-                  <!-- Mobile Login -->
+                    <!-- Mobile Nosotros -->
+                    <Collapsible v-model:open="mobileMenus.nosotros" class="space-y-1">
+                      <CollapsibleTrigger as-child>
+                        <Button variant="ghost" class="w-full justify-start h-11 px-4 text-base font-medium">
+                          <UsersIcon class="mr-3 h-5 w-5 shrink-0" />
+                          <span class="flex-1 text-left">Nosotros</span>
+                          <ChevronDownIcon 
+                            class="h-4 w-4 ml-2 shrink-0 transition-transform duration-200" 
+                            :class="{ 'rotate-180': mobileMenus.nosotros }"
+                          />
+                        </Button>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent class="space-y-1">
+                        <div class="ml-8 space-y-1 pl-4 border-l-2 border-border/50">
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/about">Acerca de Nosotros</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/autorities">Autoridades</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/profile_student">Perfil del Estudiante</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/escuela">Escuela</router-link>
+                          </Button>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+
+                    <Button 
+                      variant="ghost" 
+                      class="w-full justify-start h-11 px-4 text-base font-medium"
+                      as-child
+                      @click="isOpen = false"
+                    >
+                      <router-link to="/revista" class="flex items-center">
+                        <BookOpenIcon class="mr-3 h-5 w-5" />
+                        Revista ECYS
+                      </router-link>
+                    </Button>
+
+                    <Button 
+                      variant="ghost" 
+                      class="w-full justify-start h-11 px-4 text-base font-medium"
+                      as-child
+                      @click="isOpen = false"
+                    >
+                      <router-link to="/eventos" class="flex items-center">
+                        <CalendarIcon class="mr-3 h-5 w-5" />
+                        Eventos
+                      </router-link>
+                    </Button>
+
+                    <!-- Mobile Horarios -->
+                    <Collapsible v-model:open="mobileMenus.horarios" class="space-y-1">
+                      <CollapsibleTrigger as-child>
+                        <Button variant="ghost" class="w-full justify-start h-11 px-4 text-base font-medium">
+                          <ClockIcon class="mr-3 h-5 w-5 shrink-0" />
+                          <span class="flex-1 text-left">Horarios</span>
+                          <ChevronDownIcon 
+                            class="h-4 w-4 ml-2 shrink-0 transition-transform duration-200" 
+                            :class="{ 'rotate-180': mobileMenus.horarios }"
+                          />
+                        </Button>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent class="space-y-1">
+                        <div class="ml-8 space-y-1 pl-4 border-l-2 border-border/50">
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/horarios/clases">Horario Clases</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/horarios/laboratorio">Horario Laboratorio</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/horarios/dsi">Horario DSI</router-link>
+                          </Button>
+                          <div class="h-px bg-border/50 my-2 mx-2"></div>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/programas">Programa del Curso PDF</router-link>
+                          </Button>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+
+                    <!-- Mobile Recursos -->
+                    <Collapsible v-model:open="mobileMenus.recursos" class="space-y-1">
+                      <CollapsibleTrigger as-child>
+                        <Button variant="ghost" class="w-full justify-start h-11 px-4 text-base font-medium">
+                          <FolderIcon class="mr-3 h-5 w-5 shrink-0" />
+                          <span class="flex-1 text-left">Recursos</span>
+                          <ChevronDownIcon 
+                            class="h-4 w-4 ml-2 shrink-0 transition-transform duration-200" 
+                            :class="{ 'rotate-180': mobileMenus.recursos }"
+                          />
+                        </Button>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent class="space-y-1">
+                        <div class="ml-8 space-y-1 pl-4 border-l-2 border-border/50">
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/enlaces">Enlaces</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/archivos">Archivos</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/registro">Registro</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/pensum">Pensum</router-link>
+                          </Button>
+                          <Button 
+                            variant="ghost" 
+                            size="sm" 
+                            class="w-full justify-start h-9 text-sm hover:bg-accent/50" 
+                            as-child 
+                            @click="isOpen = false"
+                          >
+                            <router-link to="/graduacion">Procesos de Graduación</router-link>
+                          </Button>
+                        </div>
+                      </CollapsibleContent>
+                    </Collapsible>
+
+                    <Button 
+                      variant="ghost" 
+                      class="w-full justify-start h-11 px-4 text-base font-medium"
+                      as-child
+                      @click="isOpen = false"
+                    >
+                      <router-link to="/catedraticos" class="flex items-center">
+                        <UserIcon class="mr-3 h-5 w-5" />
+                        Catedráticos
+                      </router-link>
+                    </Button>
+
+                    <Button 
+                      variant="ghost" 
+                      class="w-full justify-start h-11 px-4 text-base font-medium"
+                      as-child
+                      @click="isOpen = false"
+                    >
+                      <router-link to="/biblioteca" class="flex items-center">
+                        <BookIcon class="mr-3 h-5 w-5" />
+                        Biblioteca Digital
+                      </router-link>
+                    </Button>
+                  </div>
+                </div>
+
+                <!-- Mobile Login Button - Fixed at bottom -->
+                <div class="border-t p-4 bg-background/95 backdrop-blur">
                   <Button 
-                    class="w-full mt-4"
+                    class="w-full h-11 text-base font-medium shadow-sm"
                     @click="$emit('open-login'); isOpen = false"
                   >
-                    <UserIcon class="mr-2 h-4 w-4" />
+                    <UserIcon class="mr-2 h-5 w-5" />
                     Iniciar Sesión
                   </Button>
                 </div>
@@ -299,6 +478,9 @@ import {
   UsersIcon,
   BookOpenIcon,
   CalendarIcon,
+  ClockIcon,
+  FolderIcon,
+  BookIcon,
   SunIcon,
   MoonIcon,
 } from 'lucide-vue-next'

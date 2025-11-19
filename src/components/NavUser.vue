@@ -59,10 +59,10 @@ const { isMobile } = useSidebar()
               <span class="truncate font-medium">{{ user.name }}</span>
               <span class="truncate text-xs">{{ user.email }}</span>
             </div>
-            <ChevronsUpDown class="ml-auto size-4" />
+            <!-- <ChevronsUpDown class="ml-auto size-4" /> -->
           </SidebarMenuButton>
         </DropdownMenuTrigger>
-        <DropdownMenuContent
+        <!-- <DropdownMenuContent
           class="w-[--reka-dropdown-menu-trigger-width] min-w-56 rounded-lg"
           :side="isMobile ? 'bottom' : 'right'"
           align="end"
@@ -87,7 +87,7 @@ const { isMobile } = useSidebar()
             <LogOut />
             Salir
           </DropdownMenuItem>
-        </DropdownMenuContent>
+        </DropdownMenuContent> -->
       </DropdownMenu>
     </SidebarMenuItem>
   </SidebarMenu>
