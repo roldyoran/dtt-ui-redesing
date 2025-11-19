@@ -425,7 +425,7 @@
                 <div class="border-t p-4 bg-background/95 backdrop-blur">
                   <Button
                     class="w-full h-11 text-base font-medium shadow-sm"
-                    @click="$emit('open-login'); isOpen = false"
+                    @click="() => { $emit('open-login'); isOpen = false }"
                   >
                     <UserIcon class="mr-2 h-5 w-5" />
                     Iniciar Sesión
