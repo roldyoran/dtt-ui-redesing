@@ -26,7 +26,7 @@
         <div class="flex items-center shrink-0">
           <router-link to="/" class="flex items-center space-x-2">
             <img
-              src="/logo-ecys-fiusac-min.png"
+              :src="getAssetPath('/logo-ecys-fiusac-min.png')"
               alt="DTT ECYS"
               class="h-10 w-auto transition-none"
             />
@@ -165,7 +165,7 @@
             <SheetContent side="right" class="w-[85vw] sm:w-[400px] px-0">
               <SheetHeader class="px-6 pb-4 border-b">
                 <div class="flex items-center gap-3">
-                  <img src="/logo-ecys-fiusac-min.png" alt="DTT ECYS" class="h-12 w-auto" />
+                  <img :src="getAssetPath('/logo-ecys-fiusac-min.png')" alt="DTT ECYS" class="h-12 w-auto" />
                   <div class="flex flex-col items-start">
                     <SheetTitle class="text-lg">Navegación</SheetTitle>
                     <p class="text-xs text-muted-foreground">DTT ECYS FIUSAC</p>
@@ -444,6 +444,7 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { Button } from '@/components/ui/button'
+import { getAssetPath } from '@/lib/assets'
 import {
   DropdownMenu,
   DropdownMenuContent,

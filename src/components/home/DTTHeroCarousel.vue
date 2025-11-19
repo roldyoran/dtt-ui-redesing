@@ -49,7 +49,7 @@
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="text-center">
         <img
-          src="/logo-ecys-fiusac-min.png"
+          :src="getAssetPath('/logo-ecys-fiusac-min.png')"
           alt="Logo ECYS"
           class="h-20 w-auto mx-auto filter brightness-0 invert mb-4"
         />
@@ -74,6 +74,7 @@ import {
   GraduationCapIcon,
   BookOpenIcon,
 } from 'lucide-vue-next'
+import { getAssetPath } from '@/lib/assets'
 
 // Props para el título opcional
 interface Props {
@@ -87,15 +88,15 @@ const props = withDefaults(defineProps<Props>(), {
 // Slide data - actual hero images
 const slides = ref([
   {
-    image: '/fiusac03.jpg',
+    image: getAssetPath('/fiusac03.jpg'),
     alt: 'Campus FIUSAC',
   },
   {
-    image: '/SL4.jpeg',
+    image: getAssetPath('/SL4.jpeg'),
     alt: 'Escuela de Ciencias y Sistemas',
   },
   {
-    image: '/SL7.jpeg',
+    image: getAssetPath('/SL7.jpeg'),
     alt: 'Facultad de Ingeniería USAC',
   },
 ])

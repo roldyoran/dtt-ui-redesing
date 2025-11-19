@@ -7,7 +7,7 @@
           <Card class="overflow-hidden border-0 shadow-xl">
             <div class="relative h-96 bg-gradient-to-br from-primary/10 to-primary/5">
               <img
-                src="/fiusac03.jpg"
+                :src="getAssetPath('/fiusac03.jpg')"
                 alt="Escuela de Ciencias y Sistemas"
                 class="w-full h-full object-cover"
               />
@@ -142,6 +142,7 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { getAssetPath } from '@/lib/assets'
 import {
   GraduationCapIcon,
   SparklesIcon,

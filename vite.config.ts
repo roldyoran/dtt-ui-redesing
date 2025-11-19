@@ -8,8 +8,8 @@ import tailwindcss from '@tailwindcss/vite'
 
 
 // https://vite.dev/config/
-export default defineConfig({
-  base: '/dtt-ui-redesing/',
+export default defineConfig(({ mode }) => ({
+  base: mode === 'production' ? '/dtt-ui-redesing/' : '/',
   plugins: [
     vue(),
     vueJsx(),
@@ -21,4 +21,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-})
+  define: {
+    __BASE_PATH__: JSON.stringify(mode === 'production' ? '/dtt-ui-redesing' : ''),
+  },
+}))

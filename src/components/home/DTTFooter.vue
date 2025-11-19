@@ -7,7 +7,7 @@
         <div class="space-y-4">
           <div class="flex items-center space-x-2">
             <img
-              src="/logo-ecys-fiusac-min.png"
+              :src="getAssetPath('/logo-ecys-fiusac-min.png')"
               alt="Logo ECYS"
               class="h-12 w-auto filter brightness-0 invert"
             />
@@ -205,6 +205,7 @@
 import { ref } from 'vue'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { getAssetPath } from '@/lib/assets'
 import {
   FacebookIcon,
   InstagramIcon,
