@@ -12,6 +12,8 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from '@/components/ui/sidebar'
+import { useSidebar } from '@/components/ui/sidebar'
+import { unref } from 'vue'
 
 defineProps<{
   items: {
@@ -25,6 +27,20 @@ defineProps<{
     }[]
   }[]
 }>()
+
+// Sidebar context: used to open the sidebar when clicking a collapsible item
+const { open, setOpen, isMobile, setOpenMobile } = useSidebar()
+
+const handleCollapsibleClick = () => {
+  // If the sidebar is closed (collapsed) open it before toggling the collapsible
+  if (unref(isMobile)) {
+    setOpenMobile(true)
+  } else {
+    if (!unref(open)) {
+      setOpen(true)
+    }
+  }
+}
 </script>
 
 <template>
@@ -46,7 +62,7 @@ defineProps<{
         <Collapsible v-else as-child :default-open="item.isActive" class="group/collapsible">
           <SidebarMenuItem>
             <CollapsibleTrigger as-child>
-              <SidebarMenuButton :tooltip="item.title">
+              <SidebarMenuButton :tooltip="item.title" @click="handleCollapsibleClick">
                 <component :is="item.icon" v-if="item.icon" />
                 <span>{{ item.title }}</span>
                 <ChevronRight
