@@ -20,7 +20,7 @@ import {
   Sun,
   Moon,
   Monitor,
-} from "lucide-vue-next"
+} from 'lucide-vue-next'
 import NavMain from '@/components/NavMain.vue'
 import NavUser from '@/components/NavUser.vue'
 import TeamSwitcher from '@/components/TeamSwitcher.vue'
@@ -40,7 +40,7 @@ import {
 } from '@/components/ui/sidebar'
 
 const props = withDefaults(defineProps<AppSidebarProps>(), {
-  collapsible: "icon",
+  collapsible: 'icon',
 })
 
 // Referencia al componente ThemeToggle
@@ -67,15 +67,15 @@ const toggleTheme = () => {
 // Data for DTT Platform
 const data = {
   user: {
-    name: "User DTT",
-    email: "user@dtt.com",
-    avatar: "/avatars/user.jpg",
+    name: 'User DTT',
+    email: 'user@dtt.com',
+    avatar: '/avatars/user.jpg',
   },
   teams: [
     {
-      name: "DTT Platform",
+      name: 'DTT Platform',
       logo: BookOpen,
-      plan: "Educational",
+      plan: 'Educational',
     },
     // {
     //   name: "FIUSAC",
@@ -90,126 +90,126 @@ const data = {
   ],
   navMain: [
     {
-      title: "Inicio",
-      url: "/panel",
+      title: 'Inicio',
+      url: '/panel',
       icon: SquareTerminal,
       isActive: true,
     },
     {
-      title: "Proyectos",
-      url: "/proyectos",
+      title: 'Proyectos',
+      url: '/proyectos',
       icon: Bot,
       items: [
         {
-          title: "Practica Final",
-          url: "/practica-final",
+          title: 'Practica Final',
+          url: '/practica-final',
         },
         {
-          title: "Escuela de Vacaciones",
-          url: "/escuela-vacaciones",
+          title: 'Escuela de Vacaciones',
+          url: '/escuela-vacaciones',
         },
         {
-          title: "Sanciones por copia y plagio",
-          url: "/sanciones",
+          title: 'Sanciones por copia y plagio',
+          url: '/sanciones',
         },
         {
-          title: "Recepción de Papelería",
-          url: "/papeleria",
+          title: 'Recepción de Papelería',
+          url: '/papeleria',
         },
         {
-          title: "DSI",
-          url: "/dsi",
+          title: 'DSI',
+          url: '/dsi',
         },
       ],
     },
     {
-      title: "Gestion de Salones",
-      url: "/gestion-salones",
+      title: 'Gestion de Salones',
+      url: '/gestion-salones',
       icon: BookOpen,
       items: [
         {
-          title: "Reservar Salon",
-          url: "/reservar-salon",
+          title: 'Reservar Salon',
+          url: '/reservar-salon',
         },
         {
-          title: "Mis gestiones",
-          url: "/mis-gestiones",
+          title: 'Mis gestiones',
+          url: '/mis-gestiones',
         },
       ],
     },
     {
-      title: "Mis cursos",
-      url: "/mis-cursos",
+      title: 'Mis cursos',
+      url: '/mis-cursos',
       icon: Settings2,
       items: [
         {
-          title: "Mis cursos",
-          url: "/mis-cursos",
+          title: 'Mis cursos',
+          url: '/mis-cursos',
         },
         {
-          title: "Incidentes",
-          url: "/incidentes",
+          title: 'Incidentes',
+          url: '/incidentes',
         },
       ],
     },
     {
-      title: "Bolsa de Trabajo",
-      url: "/bolsa-trabajo",
+      title: 'Bolsa de Trabajo',
+      url: '/bolsa-trabajo',
       icon: Frame,
       items: [
         {
-          title: "Mi CV",
-          url: "/mi-cv",
+          title: 'Mi CV',
+          url: '/mi-cv',
         },
         {
-          title: "Formulario CV",
-          url: "/formulario-cv",
+          title: 'Formulario CV',
+          url: '/formulario-cv',
         },
         {
-          title: "Ofertas Laborales",
-          url: "/ofertas-laborales",
+          title: 'Ofertas Laborales',
+          url: '/ofertas-laborales',
         },
         {
-          title: "Mis Aplicaciones",
-          url: "/mis-aplicaciones",
+          title: 'Mis Aplicaciones',
+          url: '/mis-aplicaciones',
         },
       ],
     },
     {
-      title: "Perfil",
-      url: "/perfil",
+      title: 'Perfil',
+      url: '/perfil',
       icon: Settings2,
       items: [
         {
-          title: "Mis Datos",
-          url: "/mis-datos",
+          title: 'Mis Datos',
+          url: '/mis-datos',
         },
         {
-          title: "Contraseña",
-          url: "/contrasena",
+          title: 'Contraseña',
+          url: '/contrasena',
         },
         {
-          title: "Sanciones y faltas",
-          url: "/sanciones-faltas",
+          title: 'Sanciones y faltas',
+          url: '/sanciones-faltas',
         },
       ],
     },
     {
-      title: "Ayuda",
-      url: "/ayuda",
+      title: 'Ayuda',
+      url: '/ayuda',
       icon: BookOpen,
       items: [
         {
-          title: "Archivos",
-          url: "/archivos",
+          title: 'Archivos',
+          url: '/archivos',
         },
         {
-          title: "Enlaces",
-          url: "/enlaces",
+          title: 'Enlaces',
+          url: '/enlaces',
         },
         {
-          title: "Preguntas frecuentes",
-          url: "/preguntas-frecuentes",
+          title: 'Preguntas frecuentes',
+          url: '/preguntas-frecuentes',
         },
       ],
     },

@@ -49,30 +49,32 @@
       <!-- Teacher Courses -->
       <div v-if="teacherCourses.length > 0" class="space-y-4">
         <h3 class="text-xl font-semibold mb-4">Cursos como Tutor/Docente</h3>
-        <CourseCard 
-          v-for="course in teacherCourses" 
-          :key="`teacher-${course.id}`" 
-          :course="course" 
+        <CourseCard
+          v-for="course in teacherCourses"
+          :key="`teacher-${course.id}`"
+          :course="course"
         />
       </div>
 
       <!-- Student Courses -->
       <div v-if="studentCourses.length > 0" class="space-y-4">
         <h3 class="text-xl font-semibold mb-4">Cursos como Estudiante</h3>
-        <CourseCard 
-          v-for="course in studentCourses" 
-          :key="`student-${course.id}`" 
-          :course="course" 
+        <CourseCard
+          v-for="course in studentCourses"
+          :key="`student-${course.id}`"
+          :course="course"
         />
       </div>
 
       <!-- No courses message -->
-      <div v-if="teacherCourses.length === 0 && studentCourses.length === 0" class="text-center py-8">
+      <div
+        v-if="teacherCourses.length === 0 && studentCourses.length === 0"
+        class="text-center py-8"
+      >
         <p class="text-muted-foreground">No hay cursos disponibles para el período seleccionado.</p>
       </div>
     </div>
   </div>
-  
 </template>
 
 <script setup lang="ts">
@@ -80,7 +82,13 @@ import { ref, onMounted, computed } from 'vue'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import CourseCard from '@/components/CourseCard.vue'
 
 interface Period {
@@ -119,8 +127,8 @@ const teacherCourses = ref<Course[]>([
     name: 'Sistemas Operativos 1',
     section: 'Sección P',
     membership: 'Tutor Académico',
-    projectId: '0281P'
-  }
+    projectId: '0281P',
+  },
 ])
 
 const studentCourses = ref<Course[]>([
@@ -129,40 +137,40 @@ const studentCourses = ref<Course[]>([
     name: 'Análisis y Diseño de Sistemas 2',
     section: 'Sección A',
     membership: 'Estudiante',
-    projectId: '0785A'
+    projectId: '0785A',
   },
   {
     id: '19',
     name: 'Sistemas Organizaciones y Gerenciales 1',
     section: 'Sección N',
     membership: 'Estudiante',
-    projectId: '0786N'
+    projectId: '0786N',
   },
   {
     id: '22',
     name: 'Inteligencia Artificial 1',
     section: 'Sección A',
     membership: 'Estudiante',
-    projectId: '0972A'
+    projectId: '0972A',
   },
   {
     id: '96',
     name: 'Departamento Soporte Informático DSI 104',
     section: 'Sección A',
     membership: 'Estudiante',
-    projectId: 'PV014'
+    projectId: 'PV014',
   },
   {
     id: '111',
     name: 'Seminario de Sistemas 2',
     section: 'Sección N',
     membership: 'Estudiante',
-    projectId: '0798N'
-  }
+    projectId: '0798N',
+  },
 ])
 
 const currentPeriodName = computed(() => {
-  const period = periods.value.find(p => p.id === selectedPeriod.value)
+  const period = periods.value.find((p) => p.id === selectedPeriod.value)
   return period?.name || 'Período no encontrado'
 })
 

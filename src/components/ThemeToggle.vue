@@ -23,7 +23,7 @@ const toggleTheme = () => {
 
 // Exponer la función para que se pueda llamar desde el padre
 defineExpose({
-  toggleTheme
+  toggleTheme,
 })
 </script>
 
@@ -35,9 +35,6 @@ defineExpose({
     @click="toggleTheme"
     :title="mode === 'light' ? 'Cambiar a modo oscuro' : 'Cambiar a modo claro'"
   >
-    <component 
-      :is="currentIcon" 
-      class="h-4 w-4 transition-transform hover:scale-110"
-    />
+    <component :is="currentIcon" class="h-4 w-4 transition-transform hover:scale-110" />
   </Button>
 </template>

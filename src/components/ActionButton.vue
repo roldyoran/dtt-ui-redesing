@@ -5,10 +5,7 @@
     class="h-auto p-3 flex flex-col items-center gap-2 text-center hover:bg-primary hover:text-primary-foreground transition-colors"
     @click="handleClick"
   >
-    <component 
-      :is="iconComponent" 
-      class="h-4 w-4 shrink-0"
-    />
+    <component :is="iconComponent" class="h-4 w-4 shrink-0" />
     <span class="text-xs leading-tight">{{ text }}</span>
   </Button>
 </template>

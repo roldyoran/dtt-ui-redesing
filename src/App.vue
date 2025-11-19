@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
 import { useColorMode } from '@vueuse/core'
 import { watchEffect } from 'vue'
 import { GithubIcon } from 'lucide-vue-next'
@@ -19,7 +19,7 @@ watchEffect(() => {
 
 <template>
   <RouterView />
-  
+
   <!-- Floating GitHub Button -->
   <a
     href="https://github.com/roldyoran/dtt-ui-redesing"
@@ -34,7 +34,8 @@ watchEffect(() => {
 
 <style scoped>
 @keyframes gentle-bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {

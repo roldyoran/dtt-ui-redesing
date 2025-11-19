@@ -13,7 +13,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   showHero: true,
-  heroTitle: undefined
+  heroTitle: undefined,
 })
 
 const isLoginModalOpen = ref(false)
@@ -44,7 +44,7 @@ const openLogin = () => (isLoginModalOpen.value = true)
 <style scoped>
 /* Additional custom styles if needed */
 .hero-pattern {
-  background-image: 
+  background-image:
     radial-gradient(circle at 25% 25%, rgba(255, 165, 0, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 75% 75%, rgba(255, 165, 0, 0.05) 0%, transparent 50%);
 }

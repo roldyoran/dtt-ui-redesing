@@ -42,7 +42,7 @@ const router = createRouter({
           name: 'dashboard',
           component: DashboardView,
         },
-      ]
+      ],
     },
     {
       path: '/mis-cursos',
@@ -53,7 +53,7 @@ const router = createRouter({
           name: 'mis-cursos',
           component: MisCursosView,
         },
-      ]
+      ],
     },
     {
       path: '/proyectos',
@@ -64,7 +64,7 @@ const router = createRouter({
           name: 'proyectos',
           component: PlaceholderView,
         },
-      ]
+      ],
     },
     {
       path: '/perfil',
@@ -75,7 +75,7 @@ const router = createRouter({
           name: 'perfil',
           component: PlaceholderView,
         },
-      ]
+      ],
     },
     {
       path: '/gestion-salones',
@@ -86,7 +86,7 @@ const router = createRouter({
           name: 'gestion-salones',
           component: PlaceholderView,
         },
-      ]
+      ],
     },
     {
       path: '/bolsa-trabajo',
@@ -97,7 +97,7 @@ const router = createRouter({
           name: 'bolsa-trabajo',
           component: PlaceholderView,
         },
-      ]
+      ],
     },
     {
       path: '/ayuda',
@@ -108,14 +108,14 @@ const router = createRouter({
           name: 'ayuda',
           component: PlaceholderView,
         },
-      ]
+      ],
     },
     // page not found
     {
       path: '/:pathMatch(.*)*',
       name: 'PageNotFound',
       component: PageNotFoundView,
-    }
+    },
   ],
 })
 

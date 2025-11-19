@@ -2,7 +2,9 @@
   <SidebarProvider>
     <AppSidebar />
     <SidebarInset>
-      <header class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+      <header
+        class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12"
+      >
         <div class="flex items-center gap-2 px-4">
           <SidebarTrigger class="-ml-1" />
           <Separator orientation="vertical" class="mr-2 h-4" />
@@ -21,13 +23,13 @@
           </Breadcrumb>
         </div>
       </header>
-      
+
       <!-- Content Area - aquí se renderiza cada vista -->
       <div class="flex flex-1 flex-col">
         <RouterView />
       </div>
     </SidebarInset>
-    
+
     <!-- Toaster para notificaciones -->
     <Toaster />
   </SidebarProvider>
@@ -37,11 +39,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import AppSidebar from '@/components/AppSidebar.vue'
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from '@/components/ui/sidebar'
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -61,37 +59,37 @@ const breadcrumbData = computed(() => {
     case 'mis-cursos':
       return {
         section: 'Tutor Académico',
-        page: 'Mis Cursos'
+        page: 'Mis Cursos',
       }
     case 'perfil':
       return {
         section: 'Usuario',
-        page: 'Perfil'
+        page: 'Perfil',
       }
     case 'proyectos':
       return {
         section: 'Tutor Académico',
-        page: 'Proyectos'
+        page: 'Proyectos',
       }
     case 'gestion-salones':
       return {
         section: 'Infraestructura',
-        page: 'Gestión de Salones'
+        page: 'Gestión de Salones',
       }
     case 'bolsa-trabajo':
       return {
         section: 'Profesional',
-        page: 'Bolsa de Trabajo'
+        page: 'Bolsa de Trabajo',
       }
     case 'ayuda':
       return {
         section: 'Soporte',
-        page: 'Ayuda'
+        page: 'Ayuda',
       }
     default:
       return {
         section: 'Panel de Control',
-        page: 'Dashboard'
+        page: 'Dashboard',
       }
   }
 })

@@ -6,9 +6,9 @@
         <!-- Logo and Description -->
         <div class="space-y-4">
           <div class="flex items-center space-x-2">
-            <img 
-              src="/logo-ecys-fiusac-min.png" 
-              alt="Logo ECYS" 
+            <img
+              src="/logo-ecys-fiusac-min.png"
+              alt="Logo ECYS"
               class="h-12 w-auto filter brightness-0 invert"
             />
           </div>
@@ -18,36 +18,36 @@
               Escuela de Ingeniería en Ciencias y Sistemas - Universidad de San Carlos de Guatemala
             </p>
           </div>
-          
+
           <!-- Social Links -->
           <div class="flex space-x-3 pt-2">
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               class="h-9 w-9 p-0 hover:bg-primary/20 hover:text-primary text-zinc-400"
               @click="openSocial('facebook')"
             >
               <FacebookIcon class="h-4 w-4" />
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               class="h-9 w-9 p-0 hover:bg-primary/20 hover:text-primary text-zinc-400"
               @click="openSocial('instagram')"
             >
               <InstagramIcon class="h-4 w-4" />
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               class="h-9 w-9 p-0 hover:bg-primary/20 hover:text-primary text-zinc-400"
               @click="openSocial('twitter')"
             >
               <TwitterIcon class="h-4 w-4" />
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               class="h-9 w-9 p-0 hover:bg-primary/20 hover:text-primary text-zinc-400"
               @click="openSocial('youtube')"
             >
@@ -61,11 +61,13 @@
           <h3 class="font-semibold text-lg">Temas Populares</h3>
           <ul class="space-y-3">
             <li v-for="link in popularLinks" :key="link.name">
-              <router-link 
-                :to="link.path" 
+              <router-link
+                :to="link.path"
                 class="text-sm text-zinc-300 hover:text-zinc-100 transition-colors duration-200 flex items-center group"
               >
-                <ChevronRightIcon class="h-3 w-3 mr-2 group-hover:tranzinc-x-1 transition-transform duration-200" />
+                <ChevronRightIcon
+                  class="h-3 w-3 mr-2 group-hover:tranzinc-x-1 transition-transform duration-200"
+                />
                 {{ link.name }}
               </router-link>
             </li>
@@ -77,11 +79,13 @@
           <h3 class="font-semibold text-lg">Recursos Académicos</h3>
           <ul class="space-y-3">
             <li v-for="resource in academicResources" :key="resource.name">
-              <router-link 
-                :to="resource.path" 
+              <router-link
+                :to="resource.path"
                 class="text-sm text-zinc-300 hover:text-zinc-100 transition-colors duration-200 flex items-center group"
               >
-                <ChevronRightIcon class="h-3 w-3 mr-2 group-hover:tranzinc-x-1 transition-transform duration-200" />
+                <ChevronRightIcon
+                  class="h-3 w-3 mr-2 group-hover:tranzinc-x-1 transition-transform duration-200"
+                />
                 {{ resource.name }}
               </router-link>
             </li>
@@ -91,48 +95,46 @@
         <!-- Contacto y Ayuda -->
         <div class="space-y-4">
           <h3 class="font-semibold text-lg">Contacto y Ayuda</h3>
-          
+
           <!-- Contact Info -->
           <div class="space-y-3">
             <div class="flex items-center space-x-3 text-sm">
               <div class="shrink-0">
                 <MailIcon class="h-4 w-4 text-zinc-400" />
               </div>
-              <a 
-                href="mailto:soporte@dtt-ecys.org" 
+              <a
+                href="mailto:soporte@dtt-ecys.org"
                 class="text-zinc-300 hover:text-primary transition-colors"
               >
                 soporte@dtt-ecys.org
               </a>
             </div>
-            
+
             <div class="flex items-center space-x-3 text-sm">
               <div class="shrink-0">
                 <MapPinIcon class="h-4 w-4 text-zinc-400" />
               </div>
-              <span class="text-zinc-300">
-                Ciudad Universitaria, Zona 12, Guatemala
-              </span>
+              <span class="text-zinc-300"> Ciudad Universitaria, Zona 12, Guatemala </span>
             </div>
 
             <div class="flex items-center space-x-3 text-sm">
               <div class="shrink-0">
                 <PhoneIcon class="h-4 w-4 text-zinc-400" />
               </div>
-              <span class="text-zinc-300">
-                (502) 2418-9000
-              </span>
+              <span class="text-zinc-300"> (502) 2418-9000 </span>
             </div>
           </div>
 
           <!-- Quick Links -->
           <ul class="space-y-2 pt-2">
             <li v-for="contact in contactLinks" :key="contact.name">
-              <router-link 
-                :to="contact.path" 
+              <router-link
+                :to="contact.path"
                 class="text-sm text-zinc-300 hover:text-zinc-100 transition-colors duration-200 flex items-center group"
               >
-                <ChevronRightIcon class="h-3 w-3 mr-2 group-hover:tranzinc-x-1 transition-transform duration-200" />
+                <ChevronRightIcon
+                  class="h-3 w-3 mr-2 group-hover:tranzinc-x-1 transition-transform duration-200"
+                />
                 {{ contact.name }}
               </router-link>
             </li>
@@ -154,24 +156,18 @@
             Sistema de Seguimiento de la Escuela de Ciencias y Sistemas
           </p>
         </div>
-        
+
         <div class="flex items-center space-x-4 text-xs text-zinc-400">
-          <router-link 
-            to="/privacy" 
-            class="hover:text-primary transition-colors"
-          >
+          <router-link to="/privacy" class="hover:text-primary transition-colors">
             Privacidad
           </router-link>
           <span>•</span>
-          <router-link 
-            to="/terms" 
-            class="hover:text-primary transition-colors"
-          >
+          <router-link to="/terms" class="hover:text-primary transition-colors">
             Términos
           </router-link>
           <span>•</span>
-          <a 
-            href="https://www.simio.com/" 
+          <a
+            href="https://www.simio.com/"
             target="_blank"
             rel="noopener noreferrer"
             class="hover:text-primary transition-colors"
@@ -185,15 +181,15 @@
       <div class="mt-6 pt-4 border-t border-zinc-700/60">
         <div class="text-center space-y-2">
           <p class="text-xs text-zinc-400">
-            Universidad de San Carlos de Guatemala utiliza software de simulación Simio bajo una licencia de Simio LLC 
-            (<a 
-              href="https://www.simio.com/" 
+            Universidad de San Carlos de Guatemala utiliza software de simulación Simio bajo una
+            licencia de Simio LLC (<a
+              href="https://www.simio.com/"
               target="_blank"
               rel="noopener noreferrer"
               class="hover:text-primary transition-colors underline"
             >
-              www.simio.com
-            </a>).
+              www.simio.com </a
+            >).
           </p>
           <div class="flex items-center justify-center space-x-2 text-xs text-zinc-500">
             <HeartIcon class="h-3 w-3" />
@@ -246,9 +242,9 @@ const openSocial = (platform: string) => {
     facebook: 'https://www.facebook.com/ecysFIUSAC',
     instagram: 'https://www.instagram.com/ecys_fiusac/',
     twitter: 'https://twitter.com/ecys_fiusac',
-    youtube: 'https://www.youtube.com/channel/YOUR_CHANNEL'
+    youtube: 'https://www.youtube.com/channel/YOUR_CHANNEL',
   }
-  
+
   const url = urls[platform as keyof typeof urls]
   if (url) {
     window.open(url, '_blank', 'noopener,noreferrer')

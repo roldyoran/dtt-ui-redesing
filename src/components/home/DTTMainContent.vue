@@ -6,9 +6,9 @@
         <div class="relative">
           <Card class="overflow-hidden border-0 shadow-xl">
             <div class="relative h-96 bg-gradient-to-br from-primary/10 to-primary/5">
-              <img 
+              <img
                 src="/fiusac03.jpg"
-                alt="Escuela de Ciencias y Sistemas" 
+                alt="Escuela de Ciencias y Sistemas"
                 class="w-full h-full object-cover"
               />
               <!-- Overlay with logo -->
@@ -23,7 +23,7 @@
               </div>
             </div>
           </Card>
-          
+
           <!-- Floating stats -->
           <div class="absolute -bottom-6 -right-6 hidden lg:block">
             <Card class="bg-background/95 backdrop-blur-sm border shadow-xl">
@@ -47,26 +47,33 @@
         <!-- Content Side -->
         <div class="space-y-8">
           <div class="space-y-4">
-            <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
+            <div
+              class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary"
+            >
               <SparklesIcon class="mr-2 h-4 w-4" />
               Excelencia Académica
             </div>
-            
+
             <h2 class="text-3xl lg:text-4xl font-bold text-foreground leading-tight">
               Escuela de Ciencias y Sistemas
             </h2>
-            
+
             <p class="text-xl text-muted-foreground leading-relaxed">
-              Una institución líder en la formación de profesionales en ingeniería de sistemas y ciencias de la computación.
+              Una institución líder en la formación de profesionales en ingeniería de sistemas y
+              ciencias de la computación.
             </p>
           </div>
 
           <div class="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              La Escuela de Ciencias y Sistemas de la Facultad de Ingeniería de la Universidad de San Carlos de Guatemala es reconocida por su excelencia académica y su compromiso con la innovación tecnológica.
+              La Escuela de Ciencias y Sistemas de la Facultad de Ingeniería de la Universidad de
+              San Carlos de Guatemala es reconocida por su excelencia académica y su compromiso con
+              la innovación tecnológica.
             </p>
             <p>
-              Formamos profesionales capacitados para enfrentar los desafíos del mundo moderno, con una sólida base teórica y práctica en desarrollo de software, sistemas de información, inteligencia artificial y tecnologías emergentes.
+              Formamos profesionales capacitados para enfrentar los desafíos del mundo moderno, con
+              una sólida base teórica y práctica en desarrollo de software, sistemas de información,
+              inteligencia artificial y tecnologías emergentes.
             </p>
           </div>
 
@@ -80,7 +87,7 @@
               </div>
               <span class="text-sm font-medium">Laboratorios Especializados</span>
             </div>
-            
+
             <div class="flex items-center space-x-3">
               <div class="shrink-0">
                 <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
@@ -89,7 +96,7 @@
               </div>
               <span class="text-sm font-medium">Cuerpo Docente Calificado</span>
             </div>
-            
+
             <div class="flex items-center space-x-3">
               <div class="shrink-0">
                 <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
@@ -98,7 +105,7 @@
               </div>
               <span class="text-sm font-medium">Convenios Internacionales</span>
             </div>
-            
+
             <div class="flex items-center space-x-3">
               <div class="shrink-0">
                 <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">

@@ -1,20 +1,16 @@
 <template>
-  <Card class="mb-4 border-2 hover:border-accent/30 transition-all"  >
+  <Card class="mb-4 border-2 hover:border-accent/30 transition-all">
     <CardHeader class="cursor-pointer" @click="toggleExpanded">
       <div class="flex justify-between items-center">
         <div>
           <CardTitle class="text-lg">{{ course.name }}</CardTitle>
           <CardDescription>
-            <strong>Sección:</strong> {{ course.section }} • 
-            <strong>Membresía:</strong> {{ course.membership }} •
-            <strong>ID:</strong> {{ course.projectId }}
+            <strong>Sección:</strong> {{ course.section }} • <strong>Membresía:</strong>
+            {{ course.membership }} • <strong>ID:</strong> {{ course.projectId }}
           </CardDescription>
         </div>
         <Button variant="ghost" size="sm">
-          <ChevronDown 
-            class="h-4 w-4 transition-transform"
-            :class="{ 'rotate-180': isExpanded }"
-          />
+          <ChevronDown class="h-4 w-4 transition-transform" :class="{ 'rotate-180': isExpanded }" />
         </Button>
       </div>
     </CardHeader>
@@ -23,10 +19,10 @@
       <CollapsibleContent>
         <CardContent class="pt-0">
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            <Button 
-              v-for="action in actions" 
+            <Button
+              v-for="action in actions"
               :key="action.id"
-              variant="outline" 
+              variant="outline"
               size="lg"
               class="text-sm justify-start"
             >
@@ -45,7 +41,7 @@ import { ref, computed } from 'vue'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Collapsible, CollapsibleContent } from '@/components/ui/collapsible'
-import { 
+import {
   ChevronDown,
   Users,
   ClipboardList,
@@ -61,7 +57,7 @@ import {
   Eye,
   Mail,
   FolderOpen,
-  AlertTriangle
+  AlertTriangle,
 } from 'lucide-vue-next'
 
 interface Course {
@@ -86,8 +82,7 @@ const toggleExpanded = () => {
 }
 
 const isTeacher = computed(() => {
-  return props.course.membership.includes('Tutor') || 
-         props.course.membership.includes('Docente')
+  return props.course.membership.includes('Tutor') || props.course.membership.includes('Docente')
 })
 
 const actions = computed(() => {
@@ -103,7 +98,7 @@ const actions = computed(() => {
       { id: 'performance360', label: 'Desempeño 360', icon: Target },
       { id: 'evaluations', label: 'Evaluaciones', icon: BookOpen },
       { id: 'forums', label: 'Foros', icon: MessageCircle },
-      { id: 'conferences', label: 'Conferencias', icon: Video }
+      { id: 'conferences', label: 'Conferencias', icon: Video },
     ]
   } else {
     return [
@@ -114,7 +109,7 @@ const actions = computed(() => {
       { id: 'statistics', label: 'Mostrar Estadísticos', icon: BarChart3 },
       { id: 'performance360', label: 'Desempeño 360', icon: Target },
       { id: 'evaluations', label: 'Evaluaciones', icon: BookOpen },
-      { id: 'report-incident', label: 'Reportar Incidente', icon: AlertTriangle }
+      { id: 'report-incident', label: 'Reportar Incidente', icon: AlertTriangle },
     ]
   }
 })
