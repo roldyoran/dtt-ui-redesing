@@ -146,23 +146,6 @@ pnpm build
 3. Respeta las convenciones de código y ejecuta `pnpm format` antes de crear el PR.
 4. Abre un Pull Request describiendo los cambios y su motivación.
 
-## Notas extras / Cambios recientes
-
-- Se añadió un botón flotante a `App.vue` que enlaza al repositorio en GitHub.
-- El menú móvil en `DTTHeader.vue` fue refinado: espaciado, jerarquía visual, animaciones suaves y botón fijo de inicio de sesión.
-- El `AppSidebar.vue` incluye ahora un item para alternar el tema que comparte estilo con los demás elementos del sidebar.
-
 ## Contacto
 
-Para preguntas o colaboración, puedes abrir un issue en GitHub: https://github.com/roldyoran/dtt-ui-redesing/issues
-
----
-
-Si quieres, puedo:
-
-- Añadir instrucciones de despliegue concretas para un proveedor (Netlify, Vercel, GitHub Pages).
-- Generar un script de GitHub Actions básico para build + preview.
-- Documentar convenciones de commit y un archivo `CONTRIBUTING.md`.
-
-Indícame cuál prefieres y lo agrego.
-
+Para preguntas o colaboración, puedes abrir un issue en GitHub o por correo.
