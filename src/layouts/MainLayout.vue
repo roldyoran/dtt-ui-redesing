@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import DTTHeader from '@/components/home/DTTHeader.vue'
 import DTTHeroCarousel from '@/components/home/DTTHeroCarousel.vue'
 import DTTFooter from '@/components/home/DTTFooter.vue'
-import LoginDialog from '@/components/home/LoginDialog.vue'
 
 // Props para controlar si mostrar el hero carousel y el título opcional
 interface Props {
@@ -15,15 +13,12 @@ const props = withDefaults(defineProps<Props>(), {
   showHero: true,
   heroTitle: undefined,
 })
-
-const isLoginModalOpen = ref(false)
-const openLogin = () => (isLoginModalOpen.value = true)
 </script>
 
 <template>
   <div class="min-h-screen bg-background">
     <!-- Modern Navigation Header -->
-    <DTTHeader @open-login="openLogin" />
+    <DTTHeader />
 
     <!-- Hero Carousel Section (optional) -->
     <DTTHeroCarousel v-if="showHero" :title="heroTitle" />
@@ -32,9 +27,6 @@ const openLogin = () => (isLoginModalOpen.value = true)
     <main>
       <slot />
     </main>
-
-    <!-- Login Modal -->
-    <LoginDialog v-model:open="isLoginModalOpen" />
 
     <!-- Modern Footer -->
     <DTTFooter />

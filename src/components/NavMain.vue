@@ -66,7 +66,7 @@ const handleCollapsibleClick = () => {
                 <component :is="item.icon" v-if="item.icon" />
                 <span>{{ item.title }}</span>
                 <ChevronRight
-                  class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90"
+                  class="ml-auto transition-all duration-300 ease-in-out group-data-[state=open]/collapsible:rotate-90"
                 />
               </SidebarMenuButton>
             </CollapsibleTrigger>

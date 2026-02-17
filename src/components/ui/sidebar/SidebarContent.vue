@@ -17,6 +17,7 @@ const props = defineProps<{
         props.class,
       )
     "
+    style="scrollbar-gutter: stable"
   >
     <slot />
   </div>

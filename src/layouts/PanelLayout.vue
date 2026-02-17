@@ -24,6 +24,25 @@
         </div>
       </header>
 
+      <!-- Banner informativo -->
+      <div v-if="route.name !== 'dashboard'" class="mx-4 mt-4">
+        <div class="bg-primary/10 border-l-4 border-primary rounded-lg p-4 shadow-sm">
+          <div class="flex items-start gap-3">
+            <div class="flex-shrink-0">
+              <svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-foreground mb-1">Sección en Desarrollo</h3>
+              <p class="text-sm text-muted-foreground">
+                Los demás paneles y dashboards aún no han sido construidos. Por el momento, todas las secciones redirigen a "Mis Cursos" como vista de demostración.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Content Area - aquí se renderiza cada vista -->
       <div class="flex flex-1 flex-col">
         <RouterView />

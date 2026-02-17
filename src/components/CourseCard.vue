@@ -10,7 +10,7 @@
           </CardDescription>
         </div>
         <Button variant="ghost" size="sm">
-          <ChevronDown class="h-4 w-4 transition-transform" :class="{ 'rotate-180': isExpanded }" />
+          <ChevronDown class="h-4 w-4 transition-all duration-300 ease-in-out" :class="{ 'rotate-180': isExpanded }" />
         </Button>
       </div>
     </CardHeader>

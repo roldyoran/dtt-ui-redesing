@@ -145,10 +145,12 @@
               'ml-4': !isScrolled,
               'ml-3 px-3 text-sm': isScrolled,
             }"
-            @click="$emit('open-login')"
+            as-child
           >
-            <UserIcon class="h-4 w-4 mr-2" />
-            Iniciar Sesión
+            <router-link to="/panel">
+              <UserIcon class="h-4 w-4 mr-2" />
+              Iniciar Sesión
+            </router-link>
           </Button>
         </div>
 
@@ -425,10 +427,13 @@
                 <div class="border-t p-4 bg-background/95 backdrop-blur">
                   <Button
                     class="w-full h-11 text-base font-medium shadow-sm"
-                    @click="() => { $emit('open-login'); isOpen = false }"
+                    as-child
+                    @click="isOpen = false"
                   >
-                    <UserIcon class="mr-2 h-5 w-5" />
-                    Iniciar Sesión
+                    <router-link to="/panel">
+                      <UserIcon class="mr-2 h-5 w-5" />
+                      Iniciar Sesión
+                    </router-link>
                   </Button>
                 </div>
               </div>
@@ -469,10 +474,6 @@ import {
   MoonIcon,
 } from 'lucide-vue-next'
 import ThemeToggle from '@/components/ThemeToggle.vue'
-
-defineEmits<{
-  'open-login': []
-}>()
 
 const route = useRoute()
 const isOpen = ref(false)
